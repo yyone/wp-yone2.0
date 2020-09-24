@@ -1,0 +1,96 @@
+////////////////////////////////
+// Compass環境変数
+////////////////////////////////
+$graceful-usage-threshold: 0.2; // 0.2%以下のブラウザは無視する
+
+////////////////////////////////
+// CSSスプライト用
+////////////////////////////////
+$category_img_path: "../img/icon/category_sprite.png";
+$social_img_path: "../img/icon/social_sprite.png";
+$other_img_path: "../img/icon/other_sprite.png";
+
+////////////////////////////////
+// レイアウト
+////////////////////////////////
+////// スマートフォン //////
+////////////////////////////////
+// Base
+$base_color: #4189C2;
+$base_width: 640px;
+$min_width: 320px;
+$side_margin: 10px;
+$min_bgimage_height: 700px;
+
+$wrapper_width_p: ($base_width - 2.0 * $side_margin) / $base_width;
+
+// Header
+$header_log_width: 180px;
+$header_height: 160px;
+
+// Menu Navigation
+$nav_menu_right_margin_p: 12px / $base_width;
+$nav_control_size: 48px;
+$globalnav_width: 240px;
+
+// SearchBox
+$searchbox_side_margin: 15px;
+$searchbox_width_p: ($globalnav_width - 2.0 * $searchbox_side_margin) / $globalnav_width;
+$searchbox_inputform_width_p: ($globalnav_width * 0.70) / $globalnav_width;
+
+// Main Box
+$main_width_p: ($base_width - 2.0 * $side_margin) / $base_width;
+$main_box_width_p: ($base_width * 0.98) / $base_width;
+$main_box_margin_bottom: 60%;
+
+// Content
+$content_width_p: ($base_width * 0.99) / $base_width;
+$content_quote_width_p: ($content_width_p * 0.95) / $content_width_p;
+$commentform_max_width_p: ($content_width_p * 0.95)/ $content_width_p;
+
+// Page Navigation
+$page_nav_width_p: ($base_width * 0.70) / $base_width;
+
+// Footer
+$footer_width_p: ($wrapper_width_p * 0.90) / $wrapper_width_p;
+
+
+////// パソコン //////
+////////////////////////////////
+$pc_breakpoint_width: 950px;
+
+// Base
+$pc_base_width: 1320px;
+$pc_side_margin: 10px;
+$pc_min_bgimage_height: 1800px;
+$pc_max_width: 1400px;
+
+$pc_wrapper_width_p: ($pc_base_width - 2.0 * $pc_side_margin) / $pc_base_width;
+
+// Header
+$pc_header_log_width: 314px;
+$pc_header_log_height: 93px;
+$pc_header_description_width: 350px;
+$pc_header_height: 150px;
+
+// SearchBox
+$pc_searchbox_width: 250px;
+
+// Main Box
+$pc_main_box_margin_bottom: 105%;
+
+// Left Bar
+$pc_leftbar_width: 250px;
+$pc_leftbar_widget_title_width: 240px;
+$pc_leftbar_widget_width: 194px;
+
+// Right Bar
+$pc_rightbar_width: 300px;
+$pc_rightbar_widget_title_width: 300px;
+$pc_rightbar_widget_width: 248px;
+$pc_rightbar_margin_bottom: 105%;
+
+// Footer
+$pc_footer_width: 1024px;
+$pc_footer_height: 360px;
+$pc_footer_firefox_height: 450px;

@@ -1,0 +1,488 @@
+/* Basic
+----------------------------------*/
+@media only screen and (min-width: 950px) {
+  #bgImage {
+    min-height: 1800px;
+  }
+
+  #wrapper {
+    width: 98.48485%;
+    max-width: 1400px;
+  }
+
+  /* Header
+  ----------------------------------*/
+  #header {
+    position: relative;
+    margin-bottom: 30px;
+    height: 150px;
+  }
+  #header .logo_box .logo {
+    width: 314px;
+    height: 93px;
+  }
+  #header .description {
+    float: left;
+    top: 42px;
+    left: 340px;
+    width: 350px;
+    font-size: 88%;
+    line-height: 15px;
+    margin-top: 0px;
+  }
+  #header .socialIcon {
+    position: absolute;
+    top: 24px;
+    right: 18px;
+  }
+  #header .socialIcon div {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background: url(../img/icon/all_social_icon.png) no-repeat;
+  }
+  #header .socialIcon .twitter {
+    background-position: 0 0;
+    left: -40px;
+  }
+  #header .socialIcon .twitter:hover {
+    background-position: 0 -32px;
+  }
+  #header .socialIcon .facebook {
+    background-position: -32px 0;
+    left: -30px;
+  }
+  #header .socialIcon .facebook:hover {
+    background-position: -32px -32px;
+  }
+  #header .socialIcon .linkedin {
+    background-position: -64px 0;
+    left: -20px;
+  }
+  #header .socialIcon .linkedin:hover {
+    background-position: -64px -32px;
+  }
+  #header .socialIcon .foursquare {
+    background-position: -96px 0;
+    left: -10px;
+  }
+  #header .socialIcon .foursquare:hover {
+    background-position: -96px -32px;
+  }
+  #header .socialIcon .rss {
+    background-position: -128px 0;
+    left: 0px;
+  }
+  #header .socialIcon .rss:hover {
+    background-position: -128px -32px;
+  }
+  #header .searchBox {
+    display: block;
+    position: absolute;
+    width: 250px;
+    height: 35px;
+    margin-top: 90px;
+    right: 20px;
+    background-color: #fff;
+    -moz-border-radius: 2px 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px 2px;
+    box-shadow: 2px 2px 2px #000;
+  }
+  #header .searchBox .magnifier {
+    background: url("../img/icon/other_sprite.png") top left no-repeat;
+    background-size: cover;
+    background-position: 0px -50px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    left: 5px;
+    z-index: 1;
+  }
+  #header .searchBox .searchForm {
+    position: relative;
+    top: -23px;
+  }
+  #header .searchBox .searchForm .keywords {
+    position: relative;
+    left: 35px;
+    font-size: 100%;
+    outline: none;
+  }
+  #header .searchBox .searchForm .keywords:placeholder-shown {
+    color: #c7c7c7;
+  }
+  #header .searchBox .searchForm .keywords::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+  #header .searchBox .searchForm .keywords:-moz-placeholder {
+    opacity: 1;
+    color: #c7c7c7;
+  }
+  #header .searchBox .searchForm .keywords::-moz-placeholder {
+    opacity: 1;
+    color: #c7c7c7;
+  }
+  #header .searchBox .searchForm .keywords:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  /* BreadCrump
+  ----------------------------------*/
+  #breadCrump {
+    position: relative;
+    font-size: 88%;
+    margin-left: 40px;
+    margin-bottom: 15px;
+  }
+  #breadCrump .item a {
+    text-decoration: none;
+  }
+  #breadCrump .item a:hover {
+    text-decoration: underline;
+  }
+
+  /* General Widget Settings
+  ----------------------------------*/
+  .widget_title {
+    display: block !important;
+    margin-bottom: 3px;
+    background: url(../img/all_frame.png) left top no-repeat;
+    background-size: 300% 200%;
+    background-position: 0 0;
+    height: 50px;
+    padding-left: 20px;
+  }
+  .widget_title span {
+    display: block;
+    position: relative;
+    right: -4px;
+    padding: 4px 20px 0 0;
+    font-size: 107%;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0px 0px 40px #fff;
+    line-height: 2.7em;
+  }
+
+  .widget_content {
+    padding: 20px 20px 30px !important;
+    background-color: #fff;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 2px 2px 2px #000;
+    font-size: 94%;
+    top: 0;
+  }
+  .widget_content a {
+    text-decoration: none;
+    color: #4189C2;
+  }
+  .widget_content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Main Content
+  ----------------------------------*/
+  #main {
+    width: auto;
+    overflow-x: hidden;
+    /* Article
+    ----------------------------------*/
+  }
+  #main .box {
+    margin-top: 2px;
+  }
+  #main .box .content {
+    font-size: 100%;
+    padding: 30px 40px 40px;
+  }
+  #main .box .content .title h1, #main .box .content .title h2, #main .box .content .title h3 {
+    font-size: 163%;
+  }
+  #main .box .content time {
+    margin-bottom: 30px;
+  }
+  #main .box .content blockquote {
+    font-size: 88%;
+    margin: 0px 5px;
+  }
+  #main .box:last-child {
+    margin-bottom: 105%;
+  }
+  #main .page-nav {
+    margin-bottom: 105%;
+  }
+  #main .page-nav .first, #main .page-nav .last {
+    line-height: 40px;
+  }
+  #main .page-nav .previous, #main .page-nav .next {
+    line-height: 42px;
+  }
+  #main .page-nav .current {
+    line-height: 42px;
+  }
+  #main .result_box {
+    left: 4px;
+  }
+  #main .article .context {
+    font-size: 100% !important;
+  }
+  #main .article .context h2 {
+    display: block;
+    margin: 20px 5px 20px 0px;
+    padding: 8px 0px 8px 18px;
+    border-left: ridge 20px #4189C2;
+    font-size: 138%;
+  }
+  #main .article .attached .indicator .before, #main .article .attached .indicator .next {
+    font-size: 113% !important;
+  }
+
+  /* Left Content
+  ----------------------------------*/
+  #left {
+    float: left;
+    position: relative;
+    width: 250px;
+    margin: 0 20px 0 18px;
+  }
+  #left .leftBox .box {
+    margin-bottom: 20px;
+  }
+  #left .leftBox .widget_title {
+    width: 240px;
+  }
+  #left .leftBox .widget_content {
+    width: 194px;
+  }
+  #left .leftBox .menuBar {
+    top: -8px;
+    left: 0px;
+  }
+  #left .leftBox .menuBar .nav_control {
+    display: none;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper {
+    position: relative;
+    width: auto;
+    top: -23px;
+    left: -224px;
+    background-color: transparent;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper .searchBox {
+    display: none;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper .global_nav {
+    position: static;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper .global_nav li {
+    font-size: 107%;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper .global_nav li.menu_icon {
+    position: relative;
+    left: -10px;
+  }
+  #left .leftBox .menuBar .global_nav_wrapper .global_nav li a .name h2:hover {
+    text-decoration: underline;
+  }
+  #left .leftBox .leftWidget {
+    display: block;
+  }
+  #left .leftBox .leftWidget .tag_cloud {
+    position: relative;
+    top: -9px;
+    left: 16px;
+  }
+
+  /* Right Content
+  ----------------------------------*/
+  #right {
+    display: block;
+    float: right;
+    width: 300px;
+    margin: 0 18px 0 20px;
+  }
+  #right .rightBox .box {
+    margin-bottom: 20px;
+  }
+  #right .rightBox .rightWidget .widget_title {
+    width: 300px;
+  }
+  #right .rightBox .rightWidget .widget_content {
+    position: relative;
+    top: -9px;
+    left: 19px;
+    width: 248px;
+  }
+  #right .rightBox .itunes {
+    position: relative;
+    left: 5px;
+  }
+  #right .rightBox .twitter_tl, #right .rightBox .adsense {
+    position: relative;
+    left: 5px;
+  }
+  #right .rightBox #newRecentPost ul {
+    padding-right: 30px;
+  }
+  #right .rightBox #newRecentPost ul li {
+    position: relative;
+    padding: 3px 0px 3px 5px;
+  }
+  #right .rightBox #newRecentPost ul li div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(../img/icon/all_category_icon.png) left top no-repeat;
+    background-size: 184px 32px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_it {
+    background-position: -17px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_web_design {
+    background-position: -34px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_apple {
+    background-position: -50px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_photo {
+    background-position: -70px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_book {
+    background-position: -84px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_movie {
+    background-position: -101px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_marketing {
+    background-position: -118px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_bicycle {
+    background-position: -134px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_programming {
+    background-position: -151px 0px;
+  }
+  #right .rightBox #newRecentPost ul li div.post_life {
+    background-position: -168px 0px;
+  }
+  #right .rightBox #newRecentPost ul li .post_title {
+    position: relative;
+    left: 25px;
+  }
+  #right .rightBox #newCollapsArchWidget {
+    position: relative;
+    left: -14px;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing, #right .rightBox #newCollapsArchWidget .archives {
+    text-indent: -12px;
+    padding-left: 14px;
+    line-height: 23px;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing .sym, #right .rightBox #newCollapsArchWidget .archives .sym {
+    cursor: pointer;
+    padding-right: 6px;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing .sym .collapse_indicator, #right .rightBox #newCollapsArchWidget .archives .sym .collapse_indicator {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    background: url(../img/icon/all_icon.png) top left no-repeat;
+    background-size: 60px 30px;
+    background-position: 0px -15px;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing .sym .expand_indicator, #right .rightBox #newCollapsArchWidget .archives .sym .expand_indicator {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    background: url(../img/icon/all_icon.png) top left no-repeat;
+    background-size: 60px 30px;
+    background-position: 0 0;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing .item a, #right .rightBox #newCollapsArchWidget .archives .item a {
+    padding: 0 0 0 11px;
+  }
+  #right .rightBox #newCollapsArchWidget .collapsing .item:before, #right .rightBox #newCollapsArchWidget .archives .item:before {
+    content: url(../img/icon/note.png);
+    position: relative;
+    top: 2px;
+    left: 10px;
+    padding-right: 5px;
+  }
+  #right .rightBox .box:last-child {
+    margin-bottom: 105%;
+  }
+
+  /* Footer
+  ----------------------------------*/
+  #footer {
+    position: absolute;
+    width: 100%;
+    height: 420px;
+  }
+  #footer a {
+    color: #4189C2;
+    font-size: 94%;
+    text-decoration: none;
+  }
+  #footer a:hover {
+    text-decoration: underline;
+  }
+  #footer .footer_content {
+    width: 1024px;
+    height: 210px;
+    padding-top: 30px;
+  }
+  #footer .footer_content p, #footer .footer_content h5 {
+    margin: 0;
+  }
+  #footer .footer_content .text {
+    padding-bottom: 5px;
+    font-size: 88%;
+  }
+  #footer .footer_content .title {
+    padding-bottom: 10px;
+  }
+  #footer .footer_content .aboutme, #footer .footer_content .box1, #footer .footer_content .box2, #footer .footer_content .link {
+    float: left;
+    padding: 0 20px;
+  }
+  #footer .footer_content .aboutme {
+    width: 300px;
+    float: left;
+    padding: 0 20px;
+  }
+  #footer .footer_content .aboutme .text {
+    padding-top: 4px;
+  }
+  #footer .footer_content .ontheweb .box1 {
+    width: 185px;
+  }
+  #footer .footer_content .ontheweb .box2 {
+    width: 185px;
+    padding-top: 30px;
+  }
+  #footer .footer_content .copyright {
+    clear: both;
+    margin: 35px 0 20px 0;
+    font-size: 113%;
+  }
+  #footer .footer_content .copyright p {
+    padding: 0;
+  }
+
+  @-moz-document url-prefix() {
+    #footer {
+      height: 450px;
+    }
+  }
+}

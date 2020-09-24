@@ -1,0 +1,13 @@
+@charset "UTF-8"; 
+
+// CSSスプライト用
+//// Compassで出力されるbackground-positionが使えないので、画像出力のみ使うこととする
+//// background-imageは自動的に吐き出されるが、使わない
+@import "icon/category/*.png";
+@import "icon/social/*.png";
+@import "icon/other/*.png";
+
+// CSSファイル
+@import "normalize_ts.min.css";
+@import "new-style.css";
+@import "new-style_950.css";

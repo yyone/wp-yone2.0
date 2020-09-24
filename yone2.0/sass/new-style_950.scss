@@ -1,0 +1,542 @@
+// Compass設定
+@import "compass/css3/";
+
+// 外部SCSSファイル
+@import "ptp-16";  //ベースフォント：16px
+@import "variables";
+
+
+////////////////////////////////
+// 関数定義
+////////////////////////////////
+
+// placeholder 色指定
+@mixin placeholder {
+	&:placeholder-shown {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+
+////////////////////////////////
+// SCSS定義
+////////////////////////////////
+
+/* Basic
+----------------------------------*/
+@media only screen and (min-width: $pc_breakpoint_width) {
+	#bgImage {
+		min-height: $pc_min_bgimage_height;
+	}
+	#wrapper{
+		width: percentage($pc_wrapper_width_p);
+		max-width: $pc_max_width;
+	}
+
+	/* Header
+	----------------------------------*/
+	#header {
+		position: relative;
+		margin-bottom: 30px;
+		height: $pc_header_height;
+		.logo_box {
+			.logo {
+				width: $pc_header_log_width;
+				height: $pc_header_log_height;
+			}
+		}
+		.description {
+			float: left;
+			top: 42px;
+			left: 340px;
+			width: $pc_header_description_width;
+			font-size: $px14;
+			line-height: 15px;
+			margin-top: 0px;
+		}
+		.socialIcon {
+			$icon_width: 32px; // CSSスプライト用
+			position: absolute;
+			top: 24px;
+			right: 18px;
+			div {
+				display: inline-block;
+				position: relative;
+				width: $icon_width;
+				height: $icon_width;
+				background:url(../img/icon/all_social_icon.png) no-repeat;
+			}
+			.twitter{
+				background-position: 0 0;
+				left: -40px;
+				&:hover {
+					background-position: 0 (-1 * $icon_width);
+				}
+			}
+			.facebook {
+				background-position: (-1 * $icon_width) 0;
+				left: -30px;
+				&:hover {
+					background-position: (-1 * $icon_width) (-1 * $icon_width);
+				}
+			}
+			.linkedin {
+				background-position: (-2 * $icon_width) 0;
+				left: -20px;
+				&:hover {
+					background-position: (-2 * $icon_width) (-1 * $icon_width);
+				}
+			}
+			.foursquare {
+				background-position: (-3 * $icon_width) 0;
+				left: -10px;
+				&:hover {
+					background-position: (-3 * $icon_width) (-1 * $icon_width);
+				}
+			}
+			.rss {
+				background-position: (-4 * $icon_width) 0;
+				left: 0px;
+				&:hover {
+					background-position: (-4 * $icon_width) (-1 * $icon_width);
+				}
+			}
+		}
+		.searchBox {
+			display: block;
+			position: absolute;
+			width: $pc_searchbox_width;
+			height: 35px;
+			margin-top: 90px;
+			right: 20px;
+			background-color: #fff;
+			@include border-radius(2px 2px);
+			box-shadow: 2px 2px 2px #000;
+			.magnifier {
+				$icon_width: 25px; // CSSスプライト画像のサイズ指定
+				background: url($other_img_path) top left no-repeat;
+				background-size: cover;
+				background-position: 0px (-2 * $icon_width);
+				width: $icon_width;
+				height: $icon_width;
+				display: inline-block;
+				position: relative;
+				top: 6px;
+				left: 5px;
+				z-index: 1;
+			}
+			.searchForm {
+				position: relative;
+				top: -23px;
+				.keywords {
+					position: relative;
+					left: 35px;
+					font-size: $px16;
+					@include placeholder {
+						color: #c7c7c7;
+					}
+					outline: none;
+				}
+			}
+		}
+	}
+
+	/* BreadCrump
+	----------------------------------*/
+	#breadCrump {
+		position: relative;
+		font-size: $px14;
+		margin-left: 40px;
+		margin-bottom: 15px;
+		.item {
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	/* General Widget Settings
+	----------------------------------*/
+	.widget_title {
+		display: block !important;
+		margin-bottom: 3px;
+		background: url(../img/all_frame.png) left top no-repeat;
+		background-size: (600 / 200 * 100%) (100 / 50 * 100%);
+		background-position: 0 0;
+		height: 50px;
+		padding-left: 20px;
+		span {
+			display: block;
+			position: relative;
+			right: -4px;
+			padding: 4px 20px 0 0;
+			font-size: $px17;
+			color: #fff;
+			font-weight: bold;
+			text-shadow: 0px 0px 40px #fff;
+			line-height: 2.7em;
+		}
+	}
+	.widget_content {
+		padding: 20px 20px 30px !important;
+		background-color: #fff;
+		@include border-radius(0px 0px 5px 5px);
+		box-shadow: 2px 2px 2px #000;
+		font-size: $px15;
+		top: 0;
+		a {
+			text-decoration: none;
+			color: $base_color;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	/* Main Content
+	----------------------------------*/
+	#main {
+		width: auto;
+		overflow-x: hidden;
+		.box {
+			margin-top: 2px;
+			.content {
+				font-size: $px16;
+				padding: 30px 40px 40px;
+				.title {
+					h1, h2, h3 {
+						font-size: $px26;
+					}
+				}
+				time {
+					margin-bottom: 30px;
+				}
+				blockquote {
+					font-size: $px14;
+					margin: 0px 5px;
+				}
+			}
+		}
+		.box:last-child {
+			margin-bottom: $pc_main_box_margin_bottom;
+		}
+		.page-nav {
+			margin-bottom: $pc_main_box_margin_bottom;
+			.first, .last {
+				line-height: 40px;
+			}
+			.previous, .next {
+				line-height: 42px;
+			}
+			.current {
+				line-height: 42px;
+			}
+		}
+		.result_box {
+			left: 4px;
+		}
+
+		/* Article
+		----------------------------------*/
+		.article {
+			.context {
+				font-size: $px16 !important;
+				h2 {
+					display: block;
+					margin: 20px 5px 20px 0px;
+					padding: 8px 0px 8px 18px;
+					border-left: ridge 20px $base_color;
+					font-size: $px22;
+				}
+				img {
+					//float: left !important;
+				}
+			}
+			.attached {
+				.indicator {
+					.before, .next {
+						font-size: $px18 !important;
+					}
+				}
+			}
+		}
+	}
+
+	/* Left Content
+	----------------------------------*/
+	#left {
+		float: left;
+		position: relative;
+		width: $pc_leftbar_width;
+		margin: 0 20px 0 18px;
+		.leftBox {
+			.box {
+				margin-bottom: 20px;
+			}
+			.widget_title {
+				width: $pc_leftbar_widget_title_width;
+			}
+			.widget_content {
+				width: $pc_leftbar_widget_width;
+			}
+			.menuBar {
+				top: -8px;
+				left: 0px;
+				.nav_control {
+					display: none;
+				}
+				.global_nav_wrapper {
+					position: relative;
+					width: auto;
+					top: -23px;
+					left: -224px;
+					background-color: transparent;
+					.searchBox {
+						display: none;
+					}
+					.global_nav {
+						position: static;
+						li {
+							font-size: $px17;
+							&.menu_icon {
+								position: relative;
+								left: -10px;
+							}
+							a {
+								.name {
+									h2:hover {
+										text-decoration: underline;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.leftWidget {
+				display: block;
+				.tag_cloud {
+					position: relative;
+					top: -9px;
+					left: 16px;
+				}
+			}
+		}
+	}
+
+	/* Right Content
+	----------------------------------*/
+	#right {
+		display: block;
+		float: right;
+		width: $pc_rightbar_width;
+		margin: 0 18px 0 20px;
+		.rightBox {
+			.box {
+				margin-bottom: 20px;
+			}
+			.rightWidget {
+				.widget_title {
+					width: $pc_rightbar_widget_title_width;
+				}
+				.widget_content {
+					position: relative;
+					top: -9px;
+					left: 19px;
+					width: $pc_rightbar_widget_width;
+				}
+			}
+			.itunes {
+				position: relative;
+				left: 5px;
+			}
+			.twitter_tl, .adsense {
+				position: relative;
+				left: 5px;
+			}
+			#newRecentPost {
+				ul {
+					padding-right: 30px;
+					li {
+						position: relative;
+						padding: 3px 0px 3px 5px;
+						div {
+							$icon_width: 16px;
+							position: absolute;
+							width: $icon_width;
+							height: $icon_width;
+							background: url(../img/icon/all_category_icon.png) left top no-repeat;
+							background-size: 184px (2 * $icon_width);
+							&.post_it {
+								background-position: -17px 0px;
+							}
+							&.post_web_design {
+								background-position: -34px 0px;
+							}
+							&.post_apple {
+								background-position: -50px 0px;
+							}
+							&.post_photo {
+								background-position: -70px 0px;
+							}
+							&.post_book {
+								background-position: -84px 0px;
+							}
+							&.post_movie {
+								background-position: -101px 0px;
+							}
+							&.post_marketing {
+								background-position: -118px 0px;
+							}
+							&.post_bicycle {
+								background-position: -134px 0px;
+							}
+							&.post_programming {
+								background-position: -151px 0px;
+							}
+							&.post_life{
+								background-position: -168px 0px;
+							}
+						}
+						.post_title {
+							position: relative;
+							left: 25px;
+						}
+					}
+				}
+			}
+			#newCollapsArchWidget {
+				position: relative;
+				left: -14px;
+				.collapsing, .archives {
+					text-indent: -12px;
+					padding-left: 14px;
+					line-height: 23px;
+					.sym {
+						$icon_width: 15px;
+						cursor: pointer;
+						padding-right: 6px;	
+						.collapse_indicator {
+							display: inline-block;
+							position: relative;
+							top: 3px;
+							width: $icon_width;
+							height: $icon_width;
+							background: url(../img/icon/all_icon.png) top left no-repeat;
+							background-size: (4 * $icon_width) (2 * $icon_width);
+							background-position: 0px (-1 * $icon_width);
+						}
+						.expand_indicator {
+							display: inline-block;
+							position: relative;
+							top: 3px;
+							width: $icon_width;
+							height: $icon_width;
+							background: url(../img/icon/all_icon.png) top left no-repeat;
+							background-size: (4 * $icon_width) (2 * $icon_width);
+							background-position: 0 0;
+						}
+					}
+					.item {
+						a {
+							padding: 0 0 0 11px;
+						}
+						&:before {
+							content: url(../img/icon/note.png);
+							position: relative;
+							top: 2px;
+							left: 10px;
+							padding-right: 5px;
+						} 
+					}
+				}
+			}
+			.box:last-child {
+				margin-bottom: $pc_rightbar_margin_bottom;
+			}
+		}
+	}
+
+	/* Footer
+	----------------------------------*/
+	#footer {
+		position: absolute;
+		width: 100%;
+		height: $pc_footer_height;
+		a {
+			color: $base_color;
+			font-size: $px15;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.footer_content {
+			width: $pc_footer_width;
+			height: 210px;
+			padding-top: 30px;
+			p, h5 {
+				margin: 0;
+			}
+			.text {
+				padding-bottom: 5px;
+				font-size: $px14;
+			}
+			.title {
+				padding-bottom: 10px;
+			}
+			.aboutme, .box1, .box2, .link {
+				float: left;
+				padding: 0 20px;
+			}
+			.aboutme {
+				width: 300px;
+				float: left;
+				padding: 0 20px;
+				.text {
+					padding-top: 4px;
+				}
+			}
+			.ontheweb {
+				$box_width: 185px;
+				.box1 {
+					width: $box_width;
+				}
+				.box2 {
+					width: $box_width;
+					padding-top: 30px;
+				}
+			}
+			.copyright {
+				clear: both;
+				margin: 35px 0 20px 0;
+				font-size: $px18;
+				p {
+					padding: 0;
+				}
+			}
+		}
+	}
+	@-moz-document url-prefix() {
+		#footer {
+			height: $pc_footer_firefox_height;
+		}
+	}
+}

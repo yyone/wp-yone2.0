@@ -1,0 +1,17 @@
+@import url(normalize_ts.min.css);
+@import url(new-style.css);
+@import url(new-style_950.css);
+.category-sprite {
+  background-image: url('../img/icon/category_sprite.png');
+  background-repeat: no-repeat;
+}
+
+.social-sprite {
+  background-image: url('../img/icon/social_sprite.png');
+  background-repeat: no-repeat;
+}
+
+.other-sprite {
+  background-image: url('../img/icon/other_sprite.png');
+  background-repeat: no-repeat;
+}

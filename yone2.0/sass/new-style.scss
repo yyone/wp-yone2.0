@@ -1,0 +1,881 @@
+// Compass設定
+@import "compass/css3/";
+
+// 外部SCSSファイル
+@import "ptp-16";  //ベースフォント：16px
+@import "variables";
+
+
+////////////////////////////////
+// 関数定義
+////////////////////////////////
+
+// placeholder 色指定
+@mixin placeholder {
+	&:placeholder-shown {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+
+////////////////////////////////
+// SCSS定義
+////////////////////////////////
+
+/* General Settings
+----------------------------------*/
+html {
+	font-size: $px16;
+}
+body {
+	min-width: $min_width;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","ＭＳ Ｐゴシック",sans-serif;
+	background-color: $base_color;
+}
+img, video {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+	vartical-align: bottom;
+}
+.ie8 img {
+	width: auto;
+}
+h1 {
+	font-size: $px36;
+	margin: 0;
+}
+h2 {
+	font-size: $px28;
+	margin: 0;
+}
+h3 {
+	font-size: $px22;
+}
+h4 {
+	font-size: $px20;
+}
+h5 {
+	font-size: $px18;
+}
+h6 {
+	font-size: $px16;
+}
+h1, h2, h3, h4, h5, h6, menu, ul, li, dl, dd, nav, span {
+	margin: 0;
+	padding: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-padding-start: 0;
+}
+ul {
+	list-style-type: none;
+}
+input, button, textarea, select {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	@include appearance(none);
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+
+/* Basic
+----------------------------------*/
+.bg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 999;
+	background-color: rgba(51, 51, 51, 0.5);
+}
+#bgImage {
+	width: 100%;
+	min-height: $min_bgimage_height;
+	background: url(../img/background.jpg) no-repeat;
+	background-position: right bottom;
+	background-size: 100% auto;
+}
+#wrapper{
+	width: percentage($wrapper_width_p);
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* Header
+----------------------------------*/
+#header {
+	height: $header_height;
+	.logo_box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		.logo {
+			display: block;
+			position: relative;
+			top: 13px;
+			left: 11px;
+			width: $header_log_width;
+		}
+	}
+	.description {
+		display: block;
+		position: relative;
+		font-size: $px10;
+		color: #fff;
+		width: 260px;
+		top: 75px;
+		left: 15px;
+	}
+	.searchBox {
+		display: none;
+	}
+}
+
+/* BreadCrump
+----------------------------------*/
+#breadCrump {
+	display: block;
+	position: relative;
+	width: 95%;
+	font-size: $px11;
+	font-weight: lighter;
+	vertical-align: middle;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	.item {
+		display: inline-block;
+		a {
+			text-decoration: underline;
+			color: #fff;
+		}
+	}
+}
+
+/* Main Content
+----------------------------------*/
+#main {
+	width: percentage($main_width_p);
+	margin: 0 auto;
+	overflow: hidden;
+	.box {
+		width: percentage($main_box_width_p);
+		margin: 0 auto;
+		height: auto;
+		margin-bottom: 30px;
+		background-color: #FFF;
+		@include border-radius(10px);
+		box-shadow: 2px 2px 2px #000;
+
+		/* Article List
+		----------------------------------*/
+		.content {
+			margin: 0 auto;
+			padding: 20px 20px 30px;
+			font-size: $px14;
+			img {
+				margin: 10px 20px 10px 5px;
+				border: solid 1px #000;
+			}
+			h1, h2 {
+				display: inline;
+				margin: 0px;
+				font-size: $px20;
+				margin-bottom: 5px;
+				color: #000;
+				text-decoration: none;
+				line-height: 1.5;
+			}
+			h3 {
+				display: inline;
+				font-size: $px18;
+			}
+			p {
+				display: block;
+				padding-bottom: 0.5em;
+			}
+			a, a:visited {
+				color: $base_color;
+				text-decoration: none;
+				&.more-link {
+					color: #BABABA;
+					text-decoration: none;
+					display: block;
+					text-align: right;
+					margin-bottom: 5px;
+				}
+			}
+			a:hover {
+				text-decoration: underline;
+				.more-link {
+					color: #4189C2;
+				}
+			}
+			.title {
+				div {
+					display: inline-block;
+					position: relative;
+					top: 5px;
+					width: 30px;
+					height: 30px;
+					margin-right: 8px;
+					background: url(../img/icon/all_category_icon.png) left top no-repeat;
+					background-size: 330px 60px;
+				}
+				.title_it {
+					background-position:  -30px 0px;
+				}
+				.title_programming {
+					background-position: -270px 0px;
+				}
+				.title_web_design {
+					background-position:  -60px 0px;
+				}
+				.title_apple {
+					background-position:  -90px 0px;
+				}
+				.title_marketing {
+					background-position: -210px 0px;
+				}
+				.title_bicycle {
+					background-position: -240px 0px;
+				}
+				.title_movie {
+					background-position: -180px 0px;
+				}
+				.title_book {
+					background-position: -150px 0px;
+				}
+				.title_photo {
+					background-position: -120px 0px;
+				}
+				.title_life {
+					background-position: -301px 0px;
+				}
+				.text {
+					color: $base_color;
+				}
+			}
+			time {
+				display: block;
+				font-size: $px12;
+				text-align: right;
+				margin-top: 10px;
+				margin-bottom: 20px;
+			}
+			.commentLink {
+				color: $base_color;
+				display: block;
+				text-align: right;
+			}
+			blockquote {
+				font-size: $px12;
+				background: url(../img/icon/other/quote_top.png) no-repeat, url(../img/icon/other/quote_bottom.png) no-repeat;
+				background-position: 0px 0px, right bottom;
+				background-size: 15px, 15px;
+				background-color: rgba(200, 223, 237, 0.2);
+				border: rgba(255, 255, 255, 0) solid 10px;
+				margin: 0px 0px;
+				max-width: percentage($content_quote_width_p);
+				@include border-radius(5px);
+				word-wrap: break-word;
+				p {
+					padding: 0px 25px;
+				}
+			}
+		}
+
+		/* Article
+		----------------------------------*/
+		.article {
+			.context {
+				word-wrap: break-word;
+				h2 {
+					display: block;
+					margin: 20px 5px 25px 0px;
+					padding: 8px 0px 8px 18px;
+					border-left: ridge 20px $base_color;
+				}
+				img {
+					float: none;
+				}
+				ul {
+					display: block;
+					list-style-type: disc;
+					-webkit-margin-before: 1em;
+					-webkit-margin-after: 1em;
+					-webkit-margin-start: 0px;
+					-webkit-margin-end: 0px;
+					-webkit-padding-start: 40px;
+				}
+			}
+			.hr {
+				margin-top: 30px;
+				background: url(../img/comment-bar.jpg) 0 0 no-repeat;
+				background-size: 100%;
+				height: 4px;
+			}
+			.attached {
+				font-size: $px14;
+				margin-top: 10px;
+				.title {
+					color: #535353;
+				}
+				.share {
+					margin: 20px 0px 10px;
+					height: 25px;
+					.title {
+						display: none;
+					}
+					.socialButton {
+						li {
+							display: inline-block;
+							position: relative;
+							float: left;
+							margin-right: 10px;
+						}
+						.fb {
+							iframe {
+								width: 68px !important;	
+							}
+						}
+					}
+				}
+				.category, .tag {
+					margin: 10px 0px;
+				}
+				.category a, .tag a {
+					color: #000;
+					font-weight: bold;
+					text-decoration: underline;
+				}
+				.indicator {
+					margin-top: 20px;
+					.before, .next {
+						text-decoration: underline;
+						display: inline-block;
+						width: 40%;
+						font-size: $px14;
+					}
+					.before {
+						float: left;
+						text-align: left;
+					}
+					.next {
+						float: right;
+						text-align: right;
+					}
+				}
+			}
+		}
+
+		/* Comments
+		----------------------------------*/
+		.comments {
+			padding: 20px 20px 30px;
+			a, input {
+				color: $base_color;
+			}
+			.comment_title {
+				height: auto;
+				font-size: $px13;
+				text-align: right;
+				margin: 0 5px 4px 0;
+			}
+			.commentlist {
+				list-style: none;
+				.comment_context {
+					background: rgba(200, 223, 237, 0.3);
+					margin-bottom: 30px;
+					padding: 20px;
+					font-size: $px14;
+					.author {
+						.photo {
+							width: 50px;
+							height: 50px;
+						}
+						.name {
+							position: relative;
+							left: 5px;
+							bottom: 5px;
+						}
+					}
+				}
+				.comment_text {
+					.reply {
+						text-align: right;
+					}
+				}
+			}
+			.comment-respond {
+				margin-top: 10px;
+				p {
+					margin: 0;
+				}
+				.comment-reply-title {
+					font-size: $px18;
+					margin-bottom: 10px;
+					small {
+						padding-left: 10px;
+					}
+				}
+				.comment-form {
+					.logged-in-as {
+						position: relative;
+						left: 5px;
+					}
+					.comment_input {
+						width: percentage($commentform_max_width_p);
+						max-width: percentage($commentform_max_width_p);
+						border-style: solid;
+						border-width: 1px;
+						border-color: #ececec;
+					}
+					.comment_form_comment {
+						margin-top: 10px;
+						textarea {
+							padding: 10px;
+						}
+					}
+					.comment_label {
+						display: none;
+					}
+					.author, .email, .url {
+						height: 20px;
+						margin-top: 10px;
+						padding: 5px;
+					}
+				}
+				.form-submit {
+					display: block;
+					margin: 10px 0;
+					text-align: right;
+					.submit {
+						font-size: $px16;
+						text-decoration: underline;
+						margin: 10px 10px 0 0;
+					}
+				}
+			}
+		}
+	}
+	.box:last-child {
+		margin-bottom: $main_box_margin_bottom;
+	}
+	.page-nav {
+		position: relative;
+		width: percentage($page_nav_width_p);
+		min-width: 320px;
+		height: 40px;
+		margin: 0 auto;
+		background-color: #fff;
+		border-style: solid;
+		border-color: #fff;
+		@include border-radius(5px 5px 5px 5px);
+		box-shadow: 1px 1px 2px #000;
+		text-align: center;
+		margin-bottom: $main_box_margin_bottom;
+		.before, .after {
+			display: none;
+		}
+		.previous, .next, .current, .first, .last {
+			display: inline-block;
+			text-align: center;
+			a {
+				color: $base_color;
+				text-decoration: none;
+			}
+		}
+		.first, .last {
+			position: relative;
+			width: 10px;
+			font-size: $px24;
+			line-height: 35px;
+			span {
+				color: #fff;
+			}
+		}
+		.first {
+			float: left;
+			padding-left: 20px;
+		}
+		.last {
+			float: right;
+			left: 75px;
+		}
+		.previous, .next {
+			width: 55px;
+			line-height: 37px;
+			span {
+				color: #fff;
+			}
+		}
+		.previous {
+			float: left;
+			padding-left: 20px;
+			a {
+				&:after {
+					content: " 前へ";
+				}
+			}
+		}
+		.next {
+			float: right;
+			padding-right: 50px;
+			a {
+				&:before {
+					content: "次へ ";
+				}
+			}
+		}
+		.current {
+			margin: 0 auto;
+			font-size: $px13;
+			line-height: 40px;
+			&:after {
+				content: "ページ目";
+			}
+		}
+	}
+	div.box {
+		margin-top: 10px;
+		.text {
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	/* Search Result / Archive List
+	----------------------------------*/
+	.result_box {
+		position: relative;
+		left: 2px;
+		width: percentage($main_box_width_p);
+		background: -moz-linear-gradient(270deg, #4189C2 0%, #659fcd 100%);
+		background: -webkit-linear-gradient(270deg, #4189C2 0%, #659fcd 100%);
+		margin: 2px 2px 15px 2px;
+		padding: 12px 0px 10px 0px;
+		@include border-radius(5px);
+		box-shadow: 0px 0px 5px #000;
+		color: #fff;
+		font-size: $px18;
+		span {
+			margin-left: 15px;
+		}
+		h1 {
+			display: inline-block;
+			font-size: $px18;
+		}
+	}
+}
+
+/* Left Content
+----------------------------------*/
+#left {
+	.leftBox {
+		.widget_title {
+			display: none;
+		}
+		.menuBar {
+			.nav_control {
+				display: block;
+				position: absolute;
+				right: percentage($nav_menu_right_margin_p);
+				top: 0px;
+				width: $nav_control_size;
+				height: $nav_control_size;
+				cursor: pointer;
+				background-color: #fff;
+				border-style: solid;
+				border-color: #fff;
+				@include border-radius(0 0 4px 4px);
+				z-index: 9999;
+				div {
+					position: relative;
+				}
+				.bar {
+					display: block;
+					position: absolute;
+					width: 50%;
+					left: 12px;
+					border-bottom: solid 4px $base_color;
+					@include transition(.35s ease-in-out);
+				}
+				.bar1 {
+					top: 6px;
+				}
+				.bar2 {
+					top: 15px;
+				}
+				.bar3 {
+					top: 24px;
+				}
+				.menu, .close {
+					position: absolute;
+					color: $base_color;
+					font: bold;
+					font-size: $px12;
+					top: 32px;
+				}
+				.menu {
+					display: block;
+					left: 6px;
+				}
+				.close {
+					display: none;
+					left: 4px;
+				}
+			}
+			.global_nav_wrapper {
+				width: $globalnav_width;
+				@include translate($globalnav_width);
+				@include transition(all 0.2s);
+				position: fixed;
+				height: 100%;
+				background-color: #fff;
+				top: -16px;
+				right: 0;
+				margin: 0;
+				padding: 0;
+				z-index: 1000;
+				.searchBox {
+					display: block;
+					position: absolute;
+					top: 70px;
+					left: 5px;
+					padding-left: 10px;
+					width: percentage($searchbox_width_p);
+					.magnifier {
+						$icon_width: 28px; // CSSスプライト画像のサイズ指定
+						background: url($other_img_path) top left no-repeat;
+						background-size: cover;
+						background-position: 0px (-2 * $icon_width);
+						width: $icon_width;
+						height: $icon_width;
+						display: inline-block;
+						position: relative;
+						float: left;
+						top: 10px;
+						left: 15px;
+					}
+					dd {
+						height: 40px;
+						border: solid 1px #fff;
+						@include border-radius(3px);
+						box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+						.searchText {
+							position: absolute;
+							width: percentage($searchbox_inputform_width_p);
+							top: 5px;
+							padding-left: 25px;
+							height: 38px;
+							font-size: $px14;
+							color: $base_color;
+							vertical-align: middle;
+							@include placeholder {
+								color: #EFE9E9;
+							}
+						}
+					}
+				}
+				.global_nav {
+					position: relative;
+					top: 120px;
+					padding-left: 10px;
+					li {
+						list-style: none;
+						a {
+							display: block;
+							color: $base_color;
+							padding: 7px 10px;
+							text-decoration: none;
+						}
+						&.menu_icon {
+							div {
+								display: inline-block;
+								position: relative;
+								top: 7px;
+								left: 10px;
+								width: 25px;
+								height: 25px;
+								margin-right: 26px;
+								background: url(../img/icon/all_category_icon.png) left top no-repeat;
+								background-size: 275px 50px;
+							}
+							.menu_home        {background-position:    0px 0px;}
+							.menu_it          {background-position:  -25px 0px;}
+							.menu_programming {background-position: -225px 0px;}
+							.menu_web_design  {background-position:  -50px 0px;}
+							.menu_apple       {background-position:  -75px 0px;}
+							.menu_marketing   {background-position: -175px 0px;}
+							.menu_bicycle     {background-position: -200px 0px;}
+							.menu_movie       {background-position: -150px 0px;}
+							.menu_book        {background-position: -125px 0px;}
+							.menu_photo       {background-position: -100px 0px;}
+							.menu_life        {background-position: -250px 0px;}
+							.name h2 {
+								display: inline-block;
+								font-size: $px16;
+								font-weight: normal;
+							}
+							/*　sub category */
+							ul {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		.active {
+			.nav_control {
+				position: fixed;
+				.bar1 {
+					transform: rotate(45deg);
+					top: 17px;
+				}
+				.bar2 {
+					display: none;
+				}
+				.bar3 {
+					transform: rotate(-45deg);
+					top: 17px;
+				}
+				.menu {
+					display: none;
+				}
+				.close {
+					display: inline-block;
+				}
+			}
+			.global_nav_wrapper {
+				@include translate(0);
+			}
+		}
+		.leftWidget {
+			display: none;
+		}
+	}
+}
+
+/* Right Content
+----------------------------------*/
+#right {
+  display: none;
+}
+
+/* Footer
+----------------------------------*/
+#footer {
+	background-image: url(../img/footer_bg.png);
+	a, a:hover, a:visited {
+		color: $base_color;
+		text-decoration: underline;
+	}
+	.footer_content {
+		width: percentage($footer_width_p);
+		margin: 0px auto;
+		padding: 10px 0px;
+		color: #fff;
+		word-spacing: 0.1rem;
+		font-size: $px14;
+		h5 {
+			margin: 20px 0 10px 0;
+			font-size: $px20;
+		}
+		.aboutme {
+			.title {
+				
+			}
+			.mail {
+				display: inline-block;
+				position: relative;
+				top: 5px;
+				width: 20px;
+				height: 20px;
+				margin-right: 7px;
+				background: url(../img/icon/all_icon.png) top left no-repeat;
+				background-size: 80px 40px;
+				background-position: -40px 0px;
+			}
+		}
+		.ontheweb {
+			p {
+				margin: 0;
+			}
+			.icon {
+				display: inline-block;
+				position: relative;
+				width: 20px;
+				height: 20px;
+				top: 5px;
+				margin-right: 10px;
+				background: url(../img/icon/all_social_icon.png) top left no-repeat;
+				background-size: 140px 40px;
+			}
+			.box1 {
+				.twitter {
+					background-position:    0px 0px;
+				}
+				.facebook {
+					background-position:  -20px 0px;
+				}
+				.linkedin {
+					background-position:  -40px 0px;
+				}
+				.foursquare {
+					background-position:  -60px 0px;
+				}
+				.github {
+					background-position: -100px 0px;
+				}
+			}
+			.box2 {
+				.gplus {
+					background-position: -120px 0px;
+				}
+				.rss {
+					background-position:  -80px 0px;
+				}
+			}
+		}
+		.copyright {
+			padding-top: 35px;
+			text-align: center;
+			font-size: $px13;
+			p {
+				padding-bottom: 5px;
+				-webkit-margin-before: 0;
+				-webkit-margin-after: 0;
+			}
+		}
+	}
+}
